@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Mysql Setup
+      - name: Set up MySQL
         run: |
           sudo /etc/init.d/mysql start
-          mysql -e 'CREATE DATABASE godatabase;' -u root -pSripragna$1
+          mysql -e 'CREATE DATABASE godatabase;' -u root -p"${{ secrets.MYSQL_PASSWORD }}"
 
       - name: Checkout Code
         uses: actions/checkout@v2
