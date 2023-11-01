@@ -50,12 +50,14 @@ jobs:
         run: packer fmt --check aws-debian.pkr.hcl
         continue-on-error: false
 
-      - name: Validate Packer Template
-        run: packer validate aws-debian.pkr.hcl
 
       - name: Check Directory
         run: |
           ls -ltr 
+
+
+      - name: Validate Packer Template
+        run: packer validate aws-debian.pkr.hcl
 
       - name: Build Packer image
         run: |
