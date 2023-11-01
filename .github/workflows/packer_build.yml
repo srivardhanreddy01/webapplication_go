@@ -42,7 +42,7 @@ jobs:
       - name: Run Integration tests
         run: |
           go test ./...
-      
+
       - name: Initialize Packer
         run: packer init aws-debian.pkr.hcl
 
