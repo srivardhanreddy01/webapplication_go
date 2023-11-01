@@ -26,6 +26,9 @@ jobs:
         with:
           go-version: 1.21.2
 
+      - name: Build Artifacts
+        run: |
+          zip -r webapplication_go.zip ./
       - name: Wait for MySQL to be ready
         run: |
           until nc -z -v -w30 localhost 3306
