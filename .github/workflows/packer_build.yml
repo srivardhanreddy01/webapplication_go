@@ -53,6 +53,10 @@ jobs:
       - name: Validate Packer Template
         run: packer validate aws-debian.pkr.hcl
 
+      - name: Check Directory
+        run: |
+          ls -ltr 
+
       - name: Build Packer image
         run: |
           ls -ltr 
